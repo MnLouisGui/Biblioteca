@@ -59,7 +59,6 @@ public class Usuario {
     }
 
     public boolean verificar(String matricula, String senha){
-        this.login=1;
         return this.matricula.equals(matricula) && this.senha.equals(senha);
     }
 }

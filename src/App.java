@@ -6,14 +6,13 @@ public class App {
     public static void main(String[] args) throws Exception {
         Boolean on=true;
         int qtd_usuario=0;
-        int login=0;
     
         Usuario usuario1=new Usuario();
         usuario1.setLogin(0);
         Usuario usuario2=new Usuario();
         Exemplar exemplar=new Exemplar();
-        Livro livro1=new Livro();
-        Livro livro2=new Livro();
+        Livro livro1=new Livro("A volta dos que não foram", "Frederico da Costa", "2077");
+        Livro livro2=new Livro("Lindos cachos de um careca", "Carlos Antônio", "1999");
         Emprestimo emprestimo=new Emprestimo();
         Curso curso1=new Curso("Informática");
         Curso curso2=new Curso("Meio ambiente");
@@ -61,13 +60,17 @@ public class App {
                     System.out.println("---------- Login ---------");
                     System.out.println("Matricula:");
                     matricula=scanner.nextLine(); matricula=scanner.nextLine(); 
-                    String m =usuario1.getMatricula();
-                    System.out.println(matricula==m);
                     System.out.println("Senha:");
                     senha=scanner.nextLine();
 
-                    if(usuario1.verificar(matricula, senha)){
-                        login=1;
+                    if(qtd_usuario==0){
+                        if(usuario1.verificar(matricula, senha)){
+                            usuario1.setLogin(1);
+                        }
+                    }if(qtd_usuario==1){
+                        if(usuario2.verificar(matricula, senha)){
+                            usuario2.setLogin(2);
+                        }
                     }
                     break;
                 case 3:
@@ -76,9 +79,28 @@ public class App {
                 default:
                     break;
             }
-            while (login==1) {
-                System.out.println("logado");
+            while (usuario1.getLogin()==1 || usuario2.getLogin()==2) {
+                System.out.println("__________________________");
+                System.out.println("----- Menu - Usuário -----");
+                System.out.println("1.Emprestimo\n2.Devolução\n5.Alterar\n4.Deslogar");
                 op=scanner.nextInt();
+                switch (op) {
+                    case 01:
+                        
+                        break;
+                    case 02:
+
+                        break;
+                    case 03:
+
+                        break;
+                    case 04:
+                        usuario1.setLogin(0);
+                        usuario2.setLogin(0);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }

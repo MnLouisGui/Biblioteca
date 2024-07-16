@@ -1,5 +1,10 @@
 public class Exemplar {
-    private String codigo;
+
+    private int codigo;
     private Boolean status;
-    Livro livro;
+    private Livro livro;
+
+    Exemplar(){
+        this.codigo++;
+    }
 }
