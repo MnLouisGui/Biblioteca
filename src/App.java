@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import javax.swing.text.StyledEditorKit.BoldAction;
-
 public class App {
     public static void main(String[] args) throws Exception {
         Boolean on=true;
@@ -86,7 +84,6 @@ public class App {
                 op=scanner.nextInt();
                 switch (op) {
                     case 01:
-                        
                         break;
                     case 02:
 

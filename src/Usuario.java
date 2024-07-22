@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.util.Calendar;
+
 public class Usuario {
     private String nome;
     private String matricula;
@@ -55,6 +58,12 @@ public class Usuario {
     }
 
     public void exibir(){
+        //data teste
+        LocalDate data=LocalDate.now();
+        
+        System.out.println(data);
+        data=data.plusDays(7);
+        System.out.println(data);
         System.out.println("Nome: "+this.nome+"\nMatricula: "+this.matricula+"\nSenha: "+this.senha+"\nCurso: "+this.curso.getNome());
     }
 
