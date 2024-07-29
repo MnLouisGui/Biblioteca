@@ -1,5 +1,5 @@
-import java.time.LocalDate;
-import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Usuario {
     private String nome;
@@ -8,6 +8,7 @@ public class Usuario {
     private int login;
 
     private Curso curso;
+    private List<Emprestimo> emprestimos;
     
     //get and set
     public Curso getCurso() {
@@ -44,9 +45,21 @@ public class Usuario {
     public void setLogin(int login) {
         this.login = login;
     }
+
+    public List<Emprestimo> getEmprestimos() {
+        return emprestimos;
+    }
+
+    public void adicionarEmprestimo(Emprestimo emprestimo) {
+        this.emprestimos.add(emprestimo);
+    }
+
+    public void removerEmprestimo(Emprestimo emprestimo) {
+        this.emprestimos.remove(emprestimo);
+    }
     //construtor
     Usuario(){
-
+        this.emprestimos = new ArrayList<>();
     }
 
     //metodos
@@ -58,12 +71,6 @@ public class Usuario {
     }
 
     public void exibir(){
-        //data teste
-        LocalDate data=LocalDate.now();
-        
-        System.out.println(data);
-        data=data.plusDays(7);
-        System.out.println(data);
         System.out.println("Nome: "+this.nome+"\nMatricula: "+this.matricula+"\nSenha: "+this.senha+"\nCurso: "+this.curso.getNome());
     }
 

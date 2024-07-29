@@ -1,10 +1,22 @@
 public class Exemplar {
 
-    private int codigo;
-    private Boolean status;
     private Livro livro;
+    private boolean status;
 
-    Exemplar(){
-        this.codigo++;
+    public Exemplar(Livro livro) {
+        this.livro = livro;
+        this.status = true;
+    }
+
+    public Livro getLivro() {
+        return livro;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }
